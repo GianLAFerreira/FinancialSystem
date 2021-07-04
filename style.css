@@ -1,0 +1,286 @@
+@charset "UTF8";
+/* global */
+:root{
+    --color-dark: #5c5959;
+    --color-green: #20D400;
+    --light-green: #3dd705;
+    --red: #e92929;
+    --white: #F1ECEC;
+    /*f1ecec */
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 93.75%; /*equivale a 15px */
+}
+body{
+
+    font-family: 'montserrat';
+}
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+    /* isto é uma trick que é utilizada para mostrar o texto apenas para os leitores de tela e não aos usuários*/
+}
+.fotosdc{
+    width: 35px;
+    height: 35px;
+}
+.conteiner{
+    /* MIN() é uma função que bsucas o valores e tras o menor valor do meu argumento para a função que eu quero executar */
+    width: min(90vw , 800px);
+    margin: auto;
+}
+/* Titles */
+h2{
+    margin-top: 3.2rem;
+    margin-bottom: 0.8rem;
+    color: var(--color-dark);
+    font-weight: normal;
+}
+/*    LINK & Buttons */
+a{
+    color: var(--color-green);
+    text-decoration: none;
+}
+a:hover{  /* ao passar o mouse */
+    color: var(--light-green);
+}
+button {
+    width: 100%;
+    height: 50px;
+    border: none;
+    color: white;
+    background-color: var(--color-green);
+    padding: 0;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+button:hover{
+    background-color: var(--light-green);
+}
+.button.new{
+    display: inline-block; /* ele quebra o display inline, pois se eu utilizar apenas o o block ele executa a linha toda*/
+    margin-bottom: .8rem;
+}
+.button.cancel{
+    color: var(--red);
+    border: 2px var(--red) solid;
+    border-radius: 0.25rem;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.button.cancel:hover{
+    opacity: 0.6;
+}
+
+
+/* header  */
+
+header{
+    background-color: #820AD1;
+    padding: 2rem 0 10rem;
+    text-align: center;
+}
+#logo{
+    color: #000000;
+    font-weight: 500;
+}
+
+/* balance */
+#balance{
+    margin-top: -8rem;
+}
+
+#balance h2{
+    color: var(--white);
+    margin-top: 0rem;
+}
+/* cards */
+#totalDisplay{
+    color: white
+}
+.totalnew{
+    color: #ffffff;
+}
+
+.card{
+    background-color: var(--white);
+    padding: 1.2rem 2rem;
+    border-radius: 0.25rem;
+    margin-bottom: 2rem;
+    color: #000000;
+}
+.card h3{
+    font-weight: normal;
+    font-size: 1rem;
+    display: flex;    /*ele muda o comportamento do HTML para ele conter as informações uma ao lado da outra */
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.card p{
+    font-size: 2rem;
+    line-height: 3rem;
+    margin-top: 3rem;
+}
+.card.total{
+    background-color: var(--color-green);
+}
+/* table */
+#transaction{
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+}
+#data-table{
+
+    width: 100%;
+    border-spacing: 0 0.5rem;
+    color: #000000;
+
+}
+table thead tr th:first-child,
+table tbody tr td:first-child{
+    border-radius: 0.5rem 0 0 0.5rem;
+}
+table thead tr th:last-child,
+table tbody tr td:last-child{
+    border-radius: 0 0.5rem 0.5rem 0;
+}
+table th{
+    background-color: var(--white);
+    font-weight: normal;
+    padding: 1rem 2rem;
+    text-align: left;
+    font-size: 1.25rem
+
+}
+/*altera a cor quando passa o mouse em cima */
+table tbody tr{
+    opacity: 0.6;
+}
+table tbody tr:hover{
+    opacity: 1;
+}
+table td{
+    background-color: var(--white);
+    padding: 1rem 2rem;
+    font-weight: normal;
+    
+}
+
+
+td.description{
+   /* color: var(--color-dark);*/
+   color: rgb(0, 0, 0);
+   font-size: 1.2rem;
+   font-weight: 500;
+    font-family: 'montserrat';
+}
+td.income{
+    color: #12a454;
+}
+td.expense{ 
+    color: #e92929;
+}
+/* Modal        */
+.modal-overlay{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.0);
+    position: fixed;
+    top: 0;
+
+    display: flex; /* deixa a caixa uma ao lado da outra */
+    align-items: center; /*deixa a caixa no centro */
+    justify-content: center; /*posiciona a caixa no centro da tela */
+
+    opacity: 0; /*Esconde a caixa*/
+    visibility: hidden; /*remove a caixa para que ela nn fica na frente*/
+    z-index: 999;
+
+}
+.modal-overlay.active{
+    opacity: 1;
+    visibility: visible;
+}
+.modal{
+    background-color: #e2dfdf ;
+    padding: 2.4rem;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    z-index: 1;
+}
+/* form    */
+#form{
+    max-width: 500px;
+
+}
+#form h2{
+    margin-top: 0;
+}
+input{
+  /*#form form input  pega o formulário especifico da aplicação, porém quandp é apenas um posso chamar apenas a minha class*/
+  border: none;  
+  border-radius: 0.2rem;
+  padding: 0.8rem;
+  width: 100%;
+}
+.input-group{
+    margin-top: 0.8rem;
+}
+.help{
+    opacity: 0.5;
+}
+.input-group.actions{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.input-group.actions .button,
+.input-group.actions button{
+    width: 48%;
+}
+
+/* footer */
+footer{
+    text-align: center;
+    padding: 4rem 0 2rem;
+    color: var( --color-dark);
+    opacity: 0.6;
+    font-size: normal;
+}
+
+#imagem{
+    width: 200px;
+    height: 90px;
+}
+/* responsive    */
+
+@media (min-width: 800px){
+    html{
+        font-size: 87.5%;
+    }
+    #balance{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr ; /*ele pega os meus grids e dive ele pelo tamanho q eu escolher*/
+        /* caso o código seja muito grande posso utilizar a sintaxe:
+        grid-template-columns: repeat(3, 1fr); */
+        gap: 1rem;
+    }
+}

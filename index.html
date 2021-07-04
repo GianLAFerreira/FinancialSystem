@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello world</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,500;1,600;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <img id="imagem" src="imagens/nubank_logo.svg" alt="imagem">
+    </header>
+    <main class="conteiner">
+
+        <section id="balance">
+            <!--Divide em seções-->
+            <h2 class="sr-only">Balanço</h2>
+            <div class="card">
+                <h3>
+                    <span>Entradas</span>
+                    <img src="imagens/entradas.svg" alt="entradas" class="fotosdc">
+                </h3>
+                <p id="incomeDisplay">0,00</p>
+            </div>
+            <div class="card">
+                <h3>
+                    <span >Saidas</span>
+                    <img src="imagens/saidas.svg" alt="Saidas" class="fotosdc">
+                </h3>
+                <p id="expenseDisplay">0,00</p>
+            </div>
+            <div class="card total">
+                <h3>
+                    <span class="totalnew">Total</span>
+                    <img src="imagens/total.svg" alt="sifrao" class="fotosdc">
+                </h3>
+                <p id="totalDisplay" color:white>0,00</p>
+            </div>
+
+        </section>
+        <section id="transaction">
+            <h2 class="sr-only">Transação</h2>
+
+            <a onclick="Modal.open()" href="#" class="button new">+ Nova Transação</a>
+            <!--Colocar uma # depois do href faz apenas testar o boitão fazendo q quando clicko a page apenas adiciona a 3 no link-->
+            <table id="data-table">
+                <!--Tabelas-->
+                <thead>
+                    <tr>
+                        <!--Linha-->
+                        <th>Descrição</th>
+                        <!--Conteúdo da linha-->
+                        <th>Valor</th>
+                        <th>Data</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </section>
+
+
+
+    </main>
+    <div class="modal-overlay">
+        <!--Transparente-->
+        <div class="modal">
+            <!--Caixa branca-->
+            <div class="form">
+                <h2>Nova transação</h2>
+                <form action="" onsubmit="Form.submit(event)">
+                    <!--formularios serve para capturar dados. Iput: entrada de dados/ Output:saida de dados-->
+                    <div class="input-group">
+                        <label class="sr-only" for="description">descrição
+                            <!--Uma marcação para explicar o que pe iput-->
+                        </label>
+                        <input type="text" id="description" name="description" placeholder="Descrição" />
+                    </div>
+
+                    <div class="input-group">
+                        <label class="sr-only" for="amount">valor</label>
+                        <!--Step é a forma que ele pula os valores no grid-->
+                        <input type="number" step="0.01" id="amount" name="amount" placeholder="0,00" />
+                        <small class="help"> Use o sinal - (negativo) para despesa e , (virgula) para casas
+                            decimais</small>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="sr-only" for="date">Data</label>
+                        <input type="date" id="date" name="date" />
+                    </div>
+
+                    <div class="input-group actions">
+                        <a onclick="Modal.close()" href="#" class="button cancel">Cancelar</a>
+                        <button>Salvar</button>
+                    </div>
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Dev.finances$</p>
+    </footer>
+
+
+  <script src="script.js"></script>
+</body>
+
+</html>
