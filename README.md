@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img alt="FinancialSystem" title="FinancialSystem" src="https://raw.githubusercontent.com/GianLAFerreira/assetes/main/Nubank.png" width="400px" />
+  <img alt="FinancialSystem" title="FinancialSystem" src="https://raw.githubusercontent.com/GianLAFerreira/assets/main/Nubank.png" width="400px" />
 </h1>
 
 <p align="center">
@@ -10,11 +10,11 @@
 </p>
 
 <p align="center">
- <img src="https://raw.githubusercontent.com/GianLAFerreira/assetes/main/Transactions.png" alt="Home page" />
+ <img src="https://raw.githubusercontent.com/GianLAFerreira/assets/main/Inicial_page.png" alt="Home page" />
  <br>
 
  <p align="center">
- <img src="https://raw.githubusercontent.com/GianLAFerreira/assetes/main/New_transactions.png" alt="New transaction" />
+ <img src="https://raw.githubusercontent.com/GianLAFerreira/assets/main/New_transactions.png" alt="New transaction" />
 
 
   <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=49AA26&labelColor=000000">
